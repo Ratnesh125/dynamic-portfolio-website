@@ -13,24 +13,41 @@ const portfolioSchema = new mongoose.Schema({
   greet: String,
   name: String,
   role: String,
-  profileImageLink: String,
-  //icons image link 
-  icon1: String,
-  icon2: String,
-  icon3: String,
-  icon4: String,
-  //profile links
-  icon1Link: String,
-  icon2Link: String,
-  icon3Link: String,
-  icon4Link: String,
-  //about me
-  aboutText: String,
-  aboutCvLink: String,
-  aboutImageLink: String,
+  github: String,
+  githubLogo: String,
+  linkedin: String,
+  linkedinLogo: String,
+  leetcode: String,
+  leetcodeLogo: String,
+  gmail: String,
+  gmailLogo: String,
+  imageLink: String,
+});
+
+const aboutMeSchema = new mongoose.Schema({
+  heading: String,
+  text: String,
+  buttonText: String,
+  imageLink: String,
+  cvLink: String,
+});
+
+const skillSchema = new mongoose.Schema({
+  text: String,
+  list: [{ name: String }],
+});
+
+const projectSchema = new mongoose.Schema({
+  imageLink: String,
+  text: String,
+  liveLink: String,
+  sourceCode: String,
 });
 
 const Portfolio = mongoose.model('Portfolio', portfolioSchema);
+const AboutMe = mongoose.model('AboutMe', aboutMeSchema);
+const Skill = mongoose.model('Skill', skillSchema);
+const Project = mongoose.model('Project', projectSchema);
 
 mongoose.connect(`${DB_URL}/portfolio`, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "portfolio" });
 

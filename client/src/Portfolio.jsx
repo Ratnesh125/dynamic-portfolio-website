@@ -1,26 +1,29 @@
 import Button from '@mui/material/Button';
+import { PortfolioData } from './Data';
+
+const data = PortfolioData;
 export default function Portfolio() {
     return (
         <div style={{ height: 425 }}>
             <div  >
                 <div style={{ marginTop: 180, color: "white", display: "flex", justifyContent: "space-around" }}>
                     <div>
-                        <div style={{ fontSize: 50 }} >Hi,I'm</div>
-                        <div style={{ fontSize: 110 }} >Ratnesh Bharti</div>
-                        <div style={{ fontSize: 30 }} >Full Stack Web Developer</div>
+                        <div style={{ fontSize: 50 }} >{data[0].greet}</div>
+                        <div style={{ fontSize: 110 }} >{data[0].name}</div>
+                        <div style={{ fontSize: 30 }} >{data[0].role}</div>
                         <div style={{ marginTop: 10 }}>
-                            <Button variant="text" size="large" style={{ color: "black" }} ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/640px-Github-desktop-logo-symbol.svg.png" width="50" height="50" />
+                            <Button variant="text" size="large" style={{ color: "black" }} ><img src={data[0].githubLogo} width="50" height="50" />
                             </Button>
-                            <Button variant="text" size="large" style={{ color: "black" }} ><img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" width="50" height="50" />
+                            <Button variant="text" size="large" style={{ color: "black" }} ><img src={data[0].linkedinLogo} width="50" height="50" />
                             </Button>
-                            <Button variant="text" size="large" style={{ color: "black" }} ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png" width="50" height="50" />
+                            <Button variant="text" size="large" style={{ color: "black" }} ><img src={data[0].leetcodeLogo} width="50" height="50" />
                             </Button>
-                            <Button variant="text" size="large" style={{ color: "black" }} ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Antu_gmail.svg/640px-Antu_gmail.svg.png" width="50" height="50" />
+                            <Button variant="text" size="large" style={{ color: "black" }} ><img src={data[0].gmailLogo} width="50" height="50" />
                             </Button>
                         </div>
                     </div>
                     <div>
-                        <img src="https://www.w3schools.com/html/img_girl.jpg" width="350" height="350" />
+                        <img src={data[0].imageLink} width="350" height="350" />
                     </div>
                 </div>
             </div>

@@ -9,7 +9,7 @@ function App() {
     return (
         <div>
             <Portfolio />
-            <Aboutme />
+            <Aboutme /> 
             <Skills />
             <Projects />
         </div>
