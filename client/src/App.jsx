@@ -9,8 +9,8 @@ function App() {
     return (
         <div>
             <Portfolio />
-            <Aboutme /> 
-            <Skills />
+            <Aboutme />
+            <Skills />  
             <Projects />
         </div>
     )

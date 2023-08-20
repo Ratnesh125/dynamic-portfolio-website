@@ -1,85 +1,27 @@
-export const PortfolioData = [{
-    greet: "Hi,I'm",
-    name: "Ratnesh Bharti",
-    role: "Full Stack Web Developer",
-    github: "https://github.com/ratnesh125/",
-    githubLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Github-desktop-logo-symbol.svg/640px-Github-desktop-logo-symbol.svg.png",
-    linkedin: "https://www.linkedin.com/in/ratneshbharti125/",
-    linkedinLogo: "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-    leetcode: "https://www.linkedin.com/in/ratneshbharti125/",
-    leetcodeLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/LeetCode_Logo_1.png/640px-LeetCode_Logo_1.png",
-    gmail: "ratneshbharti125@gmail.com",
-    gmailLogo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Antu_gmail.svg/640px-Antu_gmail.svg.png",
-    imageLink: "https://www.w3schools.com/html/img_girl.jpg"
-}
-]
+// import axios from 'axios'
 
-export const aboutmeData = [{
-    heading: "About Me",
-    text: `Lorem Ipsum is simply dummy text of the printing and 
-    typesetting industry. Lorem Ipsum has been the industry's 
-    standard dummy text ever since the 1500s, when an unknown printer
-     took a galley of type and scrambled it to make a type specimen book. 
-     It has survived not only five centuries, but also the leap into
-      electronic typesetting, remaining essentially unchanged. It
-       was popularised in the 1960s with the`,
-    buttonText: "Download CV",
-    imageLink: "https://www.w3schools.com/html/img_girl.jpg",
-    cvLink: "xyz"
-}
-]
+// export let PortfolioData = [];
+// export let aboutmeData = [];
+// export let SkillsData1 = [];
+// export let SkillsData2 = [];
+// export let ProjectData = [];
 
-export const SkillsData = [{
-    text: "Skills I have",
-    list: [
-        {
-            name: "html"
-        },
-        {
-            name: "css"
-        },
-        {
-            name: "javascript"
-        },
-        {
-            name: "react"
-        },
-        {
-            name: "node"
-        },
-        {
-            name: "express"
-        }]
-},
-{
-    text: "Skills I'm working on",
-    list: [
-        {
-            name: "git"
-        },
-        {
-            name: "github"
-        },
-        {
-            name: "java"
-        },
-        {
-            name: "typescript"
-        }
-    ]
-}
-]
+// axios.get("http://localhost:3000/portfolio/64e1b2bffcf3ad5d4ecd2189", null).then((response) => {
+// console.log(response.data);
+//     PortfolioData = response.data;
+// });
 
-export const ProjectData = [
-    {
-        imageLink: "https://www.w3schools.com/html/img_girl.jpg",
-        text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        liveLink: "link",
-        sourceCode: "link"
+// axios.get("http://localhost:3000/aboutme/64e1b399fcf3ad5d4ecd2190", null).then((response) => {
+// console.log(response.data);
+//     aboutmeData = response.data;
+// });
 
-    },
-    {
-        imageLink: "https://www.w3schools.com/html/img_girl.jpg",
-        text: "simply dummy text of the printing and typesetting industry.",
-    }
-]
+// axios.get("http://localhost:3000/skill/64e1b4adfcf3ad5d4ecd219b", null).then((response) => {
+// console.log(response.data);
+//     SkillsData1 = response.data;
+// });
+
+// axios.get("http://localhost:3000/skill/64e1b7ddfcf3ad5d4ecd219d", null).then((response) => {
+// console.log(response.data);
+//     SkillsData2 = response.data;
+// });

@@ -1,8 +1,18 @@
 import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
-import { aboutmeData } from './Data';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios'; 
+
 export default function Aboutme() {
-    const data = aboutmeData[0];
+    const [data, setData] = useState([]);
+    useEffect(() => {
+
+        async function fetchData() {
+            const response = await axios.get("http://localhost:3000/aboutme/64e1b399fcf3ad5d4ecd2190", null)
+            setData(response.data)
+        }
+        fetchData();
+    }, []);
     return (
         <div>
             <Card variant="outlined" style={{ backgroundColor: "black", height: 580 }}>

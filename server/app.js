@@ -51,13 +51,73 @@ const Project = mongoose.model('Project', projectSchema);
 
 mongoose.connect(`${DB_URL}/portfolio`, { useNewUrlParser: true, useUnifiedTopology: true, dbName: "portfolio" });
 
-app.put('/portfolio/:id', async (req, res) => {
-  const portfolio = await Portfolio.findByIdAndUpdate(req.params.id, req.body, { new: true });
-  if (portfolio) {
-    res.json({ message: 'Portfolio updated successfully' });
-  } else {
-    res.status(404).json({ message: 'Portfolio not found' });
+app.post('/portfolio/add', async (req, res) => {
+  // await updateModel(req, res, Portfolio);
+  const { greet, name, role, github, githubLogo, linkedin, linkedinLogo, leetcode, leetcodeLogo, gmail, gmailLogo, imageLink } = req.body;
+  const obj = { greet, name, role, github, githubLogo, linkedin, linkedinLogo, leetcode, leetcodeLogo, gmail, gmailLogo, imageLink };
+  const newPortfolio = new Portfolio(obj);
+  newPortfolio.save();
+  res.json({ message: 'portfolio added successfully' });
+});
+
+async function fetchModelData(req, res, Model) {
+  try {
+    const data = await Model.findById(req.params.id);
+    if (data) {
+      res.json(data);
+    } else {
+      res.status(404).json({ message: `${Model.modelName} not found` });
+    }
+  } catch (error) {
+    res.status(500).json({ message: 'An error occurred while fetching the model data' });
   }
+}
+
+// Routes for fetching data from each model
+app.get('/portfolio/:id', async (req, res) => {
+  await fetchModelData(req, res, Portfolio);
+});
+
+app.get('/aboutme/:id', async (req, res) => {
+  await fetchModelData(req, res, AboutMe);
+});
+
+app.get('/skill/:id', async (req, res) => {
+  await fetchModelData(req, res, Skill);
+});
+
+app.get('/project', async (req, res) => {
+  const data = await Project.find();
+  res.json(data);
+});
+
+async function updateModel(req, res, Model) {
+  try {
+    const updatedData = await Model.findByIdAndUpdate(req.params.id, req.body, { new: true });
+    if (updatedData) {
+      res.json({ message: `${Model.modelName} updated successfully` });
+    } else {
+      res.status(404).json({ message: `${Model.modelName} not found` });
+    }
+  } catch (error) {
+    res.status(500).json({ message: 'An error occurred while updating the model' });
+  }
+}
+
+app.put('/portfolio/:id', async (req, res) => {
+  await updateModel(req, res, Portfolio);
+});
+
+app.put('/aboutme/:id', async (req, res) => {
+  await updateModel(req, res, AboutMe);
+});
+
+app.put('/skill/:id', async (req, res) => {
+  await updateModel(req, res, Skill);
+});
+
+app.put('/project/:id', async (req, res) => {
+  await updateModel(req, res, Project);
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
