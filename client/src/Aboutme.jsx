@@ -21,7 +21,7 @@ export default function Aboutme() {
                     <Card style={{ display: 'flex', height: 400, width: 900 }}>
                         <img src={data.imageLink} width="350" height="350" style={{ margin: 25 }} />
                         <div style={{ margin: 50 }}>
-                            <div style={{ fontSize: 20 }} >{data.text}</div>
+                            <pre style={{fontSize:15}}>{data.text}</pre>
                             <br />
                             <div>
                                 <Button variant="contained">{data.buttonText}</Button>

@@ -15,10 +15,10 @@ export default function Portfolio() {
             });
     }, []);
     return (
-        <div style={{ height: 425 }}>
-            <div  >
-                <div style={{ marginTop: 180, color: "white", display: "flex", justifyContent: "space-around" }}>
-                    <div>
+        <div >
+            <div style={{ height: 600 }}>
+                <div style={{ color: "white", display: "flex", justifyContent: "flex-start" }}>
+                    <div style={{ marginLeft: 100, marginTop: 100 }}>
                         <div style={{ fontSize: 50 }} >{data.greet}</div>
                         <div style={{ fontSize: 110 }} >{data.name}</div>
                         <div style={{ fontSize: 30 }} >{data.role}</div>
@@ -33,8 +33,8 @@ export default function Portfolio() {
                             </Button>
                         </div>
                     </div>
-                    <div>
-                        <img src={data.imageLink} width="350" height="350" />
+                    <div style={{ marginTop: 100, marginLeft: 70 }}>
+                        <img src={data.imageLink} width="300" height="300" />
                     </div>
                 </div>
             </div>
